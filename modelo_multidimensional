@@ -107,3 +107,33 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+INSERT INTO mydb.DimAtleta (id_atleta, nome) VALUES
+  (1, 'Neymar'),
+  (2, 'Gabriel Jesus'),
+  (3, 'Philippe Coutinho');
+
+INSERT INTO mydb.DimTempo (id_tempo, ano, mes, dia, hora) VALUES
+  (1, 2023, 11, 16, 15),
+  (2, 2023, 11, 17, 18),
+  (3, 2023, 11, 18, 14);
+
+INSERT INTO mydb.DimLocal (id_local, local, estado, arena) VALUES
+  (1, 'Maracanã', 'RJ', 'Maracanã Stadium'),
+  (2, 'Arena Corinthians', 'SP', 'Arena Corinthians'),
+  (3, 'Mineirão', 'MG', 'Mineirão Stadium');
+
+INSERT INTO mydb.DimClube (id_clube, nome, cidade) VALUES
+  (1, 'Flamengo', 'Rio de Janeiro'),
+  (2, 'Corinthians', 'São Paulo'),
+  (3, 'Cruzeiro', 'Belo Horizonte');
+
+INSERT INTO mydb.FatCampeonato (
+  gols, escanteio, impedimento, falta, passe, posse_de_bola, precisao_passe, chute, chute_no_alvo,
+  id_atleta, id_tempo, id_local, id_clube
+) VALUES
+  (3, 8, 2, 10, 120, 55, 80, 15, 8, 1, 1, 1, 1),
+  (2, 5, 1, 8, 90, 50, 75, 12, 6, 2, 2, 2, 2),
+  (4, 10, 3, 12, 150, 65, 85, 18, 10, 3, 3, 3, 3);
+
